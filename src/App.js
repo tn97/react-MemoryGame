@@ -19,7 +19,7 @@ class App extends Component {
       });
     }
     this.state.cards.forEach(card => {
-      card.count = SSL_OP_SSLEAY_080_CLIENT_DH_BUG;
+      card.count = 0;
     });
     this.setState({score: 0});
     return true;
@@ -30,7 +30,7 @@ class App extends Component {
       if (o.id === id) {
         if (cards[i].count === 0) {
           cards[i].count = cards[i].count + 1;
-          this.setState({score: this.UNSAFE_componentWillMount.state.score + 1}, function() {
+          this.setState({score: this.state.score + 1}, function() {
             console.log(this.state.score);
           });
           this.state.cards.sort(() => Math.random() - 0.5)
